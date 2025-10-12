@@ -1,0 +1,66 @@
+.main-container {
+    margin-left: 200px;
+    margin-right: 50px;
+    margin-top: 40px;
+}
+
+.texte-container {
+    margin-top: 3%;
+}
+
+.texte {
+    text-align: justify;
+    color: #2A2A2A; /* même teinte que le texte principal */
+}
+
+.CV-container {
+    margin-top: 3%;
+}
+
+.CV {
+    position: relative;
+    display: inline-block;
+    color: #2E3A59; /* bleu nuit principal */
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-right: 20px;
+    padding-top: 2px;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.CV::before,
+.CV::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: #C9B2B9; /* touche rosée subtile */
+    width: 0;
+    transition: width 0.4s ease;
+}
+
+.CV::before {
+    left: 0;
+}
+
+.CV::after {
+    right: 0;
+}
+
+.CV:hover::before,
+.CV:hover::after {
+    width: 50%;
+}
+
+.competences-container {
+    margin-top: 3%;
+    color: #2A2A2A;
+}
+
+
+@media (max-width: 768px) {
+    .CV-links {
+        text-align: center;
+    }
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="CSS/Font.css">
+    <link rel="stylesheet" href="CSS/accueil.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a class="active">Accueil</a>
+            <a class="no-active" href="HTML/Projets.html">Projets</a>
+            <a class="no-active" href="HTML/VeilleTechno.html">Veille Technologique</a>
+            <a class="no-active" href="HTML/Stages.html">Stages</a>
+        </nav>
+        <div class="barre"></div>
+    </header>
+
+    <button class="menu" onclick="displayMenu()">☰</button>
+        <nav id="menu-nav">
+            <ul class="menu-list">
+                <a class="active">Accueil</a>
+                <a class="no-active" href="HTML/Projets.html">Projets</a>
+                <a class="no-active" href="HTML/VeilleTechno.html">Veille Technologique</a>
+                <a class="no-active" href="HTML/Stages.html">Stages</a>
+            </ul>
+            <hr style="border: none; border-top: 2px solid #2E3A59; margin: 2rem 2rem;">
+        </nav>
+
+    <h1>Bienvenue sur mon Portfolio</h1>
+    <div class="main-container">
+        <h2>Qui suis-je ?</h2>
+        <div class="texte-container">
+            <p class="texte">
+                Je m'appelle Nora MERHAND et je suis étudiante en première année de BTS SIO 
+                (Services Informatiques aux Organisations), option SLAM (Solutions Logicielles et Applications
+                Métiers) à la Joliverie. 
+            </p>
+            <p class="texte">
+                Passionnée par l'informatique et en particulier le développement, j'ai acquis des compétences 
+                en programmation, gestion de bases de données et développement web. Mon parcours m'a 
+                permis de travailler sur divers projets, tant professionnels que personnels, où j'ai pu mettre 
+                en pratique mes connaissances et développer ma créativité.
+            </p>
+            <p class="texte">
+                Enfin, au-delà de l'informatique, je suis également une grande lectrice : les mots, comme 
+                les lignes de code, me passionnent. Cette affinité m'aide à accorder de l'attention aux 
+                détails, à la clarté et à la qualité de ce que je réalise.
+            </p>
+        </div>
+ 
+        <div class="competences-container">
+            <h2>Mes compétences</h2>
+            <ul>
+                <li>Informatiques
+                    <ul><br>
+                        <li><strong>Algorithmie : </strong>Python</li>
+                        <li><strong>Web : </strong>HTML, CSS, JavaScript / TypeScript, PHP, JSON</li>
+                        <li><strong>Programmation orienté objet : </strong>Java, PHP</li>
+                        <li><strong>Base de données : </strong>langage SQL, MySQL, MariaDB</li>
+                        <li><strong>Frameworks : </strong>LWC (Lightning Web Components)</li>
+                        <li><strong>Versioning : </strong>Git, GitHub, GitLab</li>
+                        <li><strong>Système : </strong>
+                            <ul>
+                                <li>Station de travail Windows10, Linux (Fedora) : installation, configuration, administration</li>
+                                <li>Serveurs Windows Server, Linux (Rocky, Debian) : installation, configuration, administration</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li><br>
+                <li>Outils
+                    <ul><br>
+                        <li><strong>Environnement de développement : </strong>Visual Studio Code, NetBeans</li>
+                        <li><strong>Outils serveurs & base de données : </strong>LAMP / XAMPP, phpMyAdmin</li>
+                        <li><strong>Plateformes : </strong> Salesforce (développement LWC)</li>
+                        <li><strong>Gestion de projet : </strong>GitLab, Trello, Notion</li>
+                        <li><strong>NoCode : </strong>Odoo</li>
+                        <li><strong>Communication : </strong>Teams, Slack</li>
+                        <li><strong>Design : </strong>Figma</li>
+                    </ul>
+                </li><br>
+                <li>Soft skills
+                    <ul><br>
+                        <li>Autonomie et prise d'initiative</li>
+                        <li>Sens de l'organisation</li>
+                        <li>Curiosité et apprentissage continu</li>
+                        <li>Travail en équipe & collaboration</li>
+                        <li>Je fais de divines mayonnaises</li>
+                    </ul>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="CV-container">
+            <h2>Mes CV</h2>
+            <div class="CV-links">
+                <a class="CV" href="Documents/MERHAND_Nora_CV.pdf" data-text="Télécharger mon CV" target="_blank">Télécharger</a>
+                <a class="CV" href="Documents/MERHAND_Nora_CV_anglais.pdf" data-text="Download mon CV" target="_blank">Download</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="table-footer">
+            <div class="table-container" id="a-propos">
+                <h2>A propos</h2>
+                <p>Portfolio réalisé dans le cadre de mon BTS SIO à la Joliverie</p>
+            </div>
+            <div class="table-container" id="navigation">
+                <h2>Navigation</h2>
+                <div class="div-link"><a class="link-navigation" href="#">Accueil</a></div>
+                <div class="div-link"><a class="link-navigation" href="HTML/Projets.html">Projets</a></div>
+                <div class="div-link"><a class="link-navigation" href="HTML/VeilleTechno.html">Veille Technologique</a></div>
+                <div class="div-link"><a class="link-navigation" href="HTML/Stages.html">Stages</a></div>
+            </div>
+            <div class="table-container" id="social-container">
+                <h2>Me contacter</h2>
+                <div class="contact-container">
+                    <p class="contact">Téléphone : <a class="link-contact" href="tel:+33633429784">06.33.42.97.84</a></p>
+                    <p class="contact">Email : <a class="link-contact" href="mailto:nmerhand@la-joliverie.com">nmerhand@la-joliverie.com</a></p>
+                </div>
+                <div>
+                    <a href="https://www.linkedin.com/in/nora-merhand-a372432aa/" target="_blank"><img
+                            src="Images/linkedin.svg" class="social-icon"></a>
+                </div>
+            </div>
+        </div>
+        <div class="up-container">
+            <a href="#" id="scrollToTopBtn">
+                <img src="Images/flecheRetour.png" class="arrow-up">
+            </a>
+        </div>
+    </footer>
+
+    
+</body>
+
+<script src="JS/scrollSmooth.js"></script>
+<script src="JS/Menu.js"></script>
+
+</html>

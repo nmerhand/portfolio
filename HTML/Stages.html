@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Stages</title>
+        <link rel="stylesheet" href="../CSS/Font.css">
+        <link rel="stylesheet" href="../CSS/stages.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a class="no-active" href="../index.html">Accueil</a>
+                <a class="no-active" href="Projets.html">Projets</a>
+                <a class="no-active" href="VeilleTechno.html">Veille Technologique</a>
+                <a class="active">Stages</a>
+            </nav>
+            <div class="barre"></div>
+        </header>
+
+        <button class="menu" onclick="displayMenu()">☰</button>
+        <nav id="menu-nav">
+            <ul class="menu-list">
+                <a class="no-active" href="../index.html">Accueil</a>
+                <a class="no-active" href="Projets.html">Projets</a>
+                <a class="no-active" href="VeilleTechno.html">Veille Technologique</a>
+                <a class="active">Stages</a>
+            </ul>
+            <hr style="border: none; border-top: 2px solid #2E3A59; margin: 2rem 2rem;">
+        </nav>
+
+        <h1>Stages</h1>
+        <div class="main-container">
+            <div class="first-stage">
+                <h2>Première année</h2>
+                <p>Durant mon stage de six semaines, du 12 mai au 20 juin 2025, chez <a class="inner-link-stage" 
+                    href="https://kiliogene.com/" target="_blank">Kiliogene</a>, société spécialisée en 
+                    solutions Salesforce, j'ai travaillé en tant que développeuse front-end sur des
+                     composants Lightning Web Components (LWC). Encadrée par un tuteur expérimenté, 
+                     j'ai participé à l'amélioration et à la création de composants génériques réutilisables, 
+                     intégrables dans des Flows ou d'autres LWC.
+                </p>
+                <p>J'ai notamment développé ou amélioré :</p>
+                <ul>
+
+                    <li>Une dual-picklist avec barre de recherche dynamique</li>
+                    <img class="myImg" src="../Images/Stage/Dual-picklist.jpg" alt="Composant Dual-Picklist" style="width:100%;max-width:430px">
+                    <div class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content">
+                        <div class="caption"></div>
+                    </div> 
+
+                    <li>Une timeline multi-orientations avec affichage progressif et scroll horizontal</li>
+                    <img class="myImg" src="../Images/Stage/Timeline_vertical.jpg" alt="Composant Timeline en orientation verticale" style="width:100%;max-width:120px">
+                    <div class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content TimelineV">
+                        <div class="caption"></div>
+                    </div>
+
+                    <img class="myImg" src="../Images/Stage/Timeline_horizontal.jpg" alt="Composant Timeline en orientation horizontale" style="width:100%;max-width:340px">
+                    <div class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content">
+                        <div class="caption"></div>
+                    </div> 
+
+                    <li>Une nullable checkbox adaptée aux valeurs null/undefined</li>
+                    <img class="myImg" src="../Images/Stage/NullableCheckbox.jpg" alt="Composant Nullable Checkbox" style="width:100%;max-width:200px">
+                    <div class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content Checkbox">
+                        <div class="caption"></div>
+                    </div>
+
+                    <li>Une tree grid responsive, avec affichage récursif, adaptation sur mobile et 
+                        sélection de lignes
+                    </li>
+                    <img class="myImg" src="../Images/Stage/desktop.jpg" alt="Composant Tree Grid en version ordinateur" style="width:100%;max-width:800px">
+                    <div class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content TreeGridDesktop">
+                        <div class="caption"></div>
+                    </div>
+
+                    <img class="myImg" src="../Images/Stage/mobile.jpg" alt="Composant Tree Grid en version mobile" style="width:100%;max-width:130px">
+                    <div class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content TreeGridMobile">
+                        <div class="caption"></div>
+                    </div>
+                    
+                </ul>
+                <p>
+                    Ces missions m'ont permis de maîtriser des technologies comme HTML, CSS, JavaScript / 
+                    TypeScript, Git, et de découvrir les spécificités de Salesforce. J'ai aussi appris à 
+                    écrire des tests unitaires avec Jest, à utiliser Figma pour la conception de maquettes, 
+                    et à collaborer en équipe via des outils comme Slack.
+                </p>
+                <p>
+                    Ce stage m'a permis de gagner en autonomie, de renforcer ma rigueur et de confirmer mon 
+                    attrait pour le développement informatique. Grâce à cette expérience, j'ai acquis une 
+                    meilleure vision du métier et des attentes du secteur.
+                </p>
+
+
+                <div class="links-container">
+                    <button class="link-button" onclick="window.open('https://drive.google.com/drive/folders/1a8E09nSnKqBFiW0xng3Jl1mdt3FYReUo', '_blank')">
+                        Comptes-rendus hebdomadaires
+                    </button>
+                    <button class="link-button" onclick="window.open('../Documents/MERHAND_Nora_1SLAM_2025_Stage_1_Rapport.pdf', '_blank')">
+                        Rapport de stage
+                    </button>
+                </div>
+
+            </div>
+            <h2>Deuxième année</h2>
+        </div>
+    
+    <footer>
+        <div class="table-footer">
+            <div class="table-container" id="a-propos">
+                <h2>A propos</h2>
+                <p>Portfolio réalisé dans le cadre de mon BTS SIO à la Joliverie</p>
+            </div>
+            <div class="table-container" id="navigation">
+                <h2>Navigation</h2>
+                <div class="div-link"><a class="link-navigation" href="../index.html">Accueil</a></div>
+                <div class="div-link"><a class="link-navigation" href="Projets.html">Projets</a></div>
+                <div class="div-link"><a class="link-navigation" href="VeilleTechno.html">Veille Technologique</a></div>
+                <div class="div-link"><a class="link-navigation" href="#">Stages</a></div>
+            </div>
+            <div class="table-container" id="social-container">
+                <h2>Me contacter</h2>
+                <div class="contact-container">
+                    <p class="contact">Téléphone : <a class="link-contact" href="tel:+33633429784">06.33.42.97.84</a></p>
+                    <p class="contact">Email : <a class="link-contact" href="mailto:nmerhand@la-joliverie.com">nmerhand@la-joliverie.com</a></p>
+                </div>
+                <div>
+                    <a href="https://www.linkedin.com/in/nora-merhand-a372432aa/" target="_blank"><img
+                            src="../Images/linkedin.svg" class="social-icon"></a>
+                </div>
+            </div>
+        </div>
+        <div class="up-container">
+            <a href="#" id="scrollToTopBtn">
+                <img src="../Images/flecheRetour.png" class="arrow-up">
+            </a>
+        </div>
+    </footer>
+
+</body>
+
+<script src="../JS/scrollSmooth.js"></script>
+<script src="../JS/imagesModal.js"></script>
+<script src="../JS/Menu.js"></script>
+
+</html>

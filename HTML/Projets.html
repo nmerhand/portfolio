@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets</title>
+    <link rel="stylesheet" href="../CSS/Font.css">
+    <link rel="stylesheet" href="../CSS/projets.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a class="no-active" href="../index.html">Accueil</a>
+            <a class="active">Projets</a>
+            <a class="no-active" href="VeilleTechno.html">Veille Technologique</a>
+            <a class="no-active" href="Stages.html">Stages</a>
+        </nav>
+        <div class="barre"></div>
+    </header>
+
+    <button class="menu" onclick="displayMenu()">☰</button>
+        <nav id="menu-nav">
+            <ul class="menu-list">
+                <a class="no-active" href="../index.html">Accueil</a>
+                <a class="active">Projets</a>
+                <a class="no-active" href="VeilleTechno.html">Veille Technologique</a>
+                <a class="no-active" href="Stages.html">Stages</a>
+            </ul>
+            <hr style="border: none; border-top: 2px solid #2E3A59; margin: 2rem 2rem;">
+        </nav>
+
+    <h1>Projets</h1>
+    <p id="sous-titre">Au cours de mon BTS, j'ai réalisé de nombreux projets, professionels et personnels.</p>
+    <div class="main-container">
+        <fieldset class="annees">
+            <legend class="name-annee">Première année</legend>
+
+            <p class="perso-pro">Projets professionels</p>
+            <fieldset class='bulle' onclick="window.location.href='Projets/ProjetPython.html'">
+                <a>
+                    <legend class="name-project">Python</legend>
+                    <span class="description">Gestion de Logs</span> <br />
+                    <span></span> <br />
+                    <span></span> <br />
+                </a>
+            </fieldset>
+            <fieldset class='bulle' onclick="window.location.href='Projets/Intranet.html'">
+                <a class="button">
+                    <legend class="name-project">Intranet</legend>
+                    <span class="description">Création d'un intranet d'entreprise</span> <br />
+                    <span></span> <br />
+                </a>
+            </fieldset>
+            <fieldset class='bulle' onclick="window.location.href='Projets/ProjetThali.html'">
+                <a class="button">
+                    <legend class="name-project">Thali</legend>
+                    <span class="description">Gestion d'excursions pour un centre de thalassothérapie</span> <br />
+                </a>
+            </fieldset>
+            <hr style="border: none; border-top: 2px solid #C9B2B9; margin: 1rem 2rem;">
+
+            <p class="perso-pro">Projets personnels</p>
+            <fieldset class='bulle' onclick="window.location.href='Projets/JartDeco.html'">
+                <a class="button">
+                    <legend class="name-project">J'art déco</legend>
+                    <span class="description">Mini-entreprise de l'EREA La Rivière</span> <br />
+                    <span></span> <br />
+                </a>
+            </fieldset>
+        </fieldset> <br />
+
+        <fieldset class="annees">
+            <legend class="name-annee">Deuxième année</legend>
+        </fieldset>
+
+    </div>
+    <footer>
+        <div class="table-footer">
+            <div class="table-container" id="a-propos">
+                <h2>A propos</h2>
+                <p>Portfolio réalisé dans le cadre de mon BTS SIO à la Joliverie</p>
+            </div>
+            <div class="table-container" id="navigation">
+                <h2>Navigation</h2>
+                <div class="div-link"><a class="link-navigation" href="../index.html">Accueil</a></div>
+                <div class="div-link"><a class="link-navigation" href="#">Projets</a></div>
+                <div class="div-link"><a class="link-navigation" href="VeilleTechno.html">Veille Technologique</a>
+                </div>
+                <div class="div-link"><a class="link-navigation" href="Stages.html">Stages</a></div>
+            </div>
+            <div class="table-container" id="social-container">
+                <h2>Me contacter</h2>
+                <div class="contact-container">
+                    <p class="contact">Téléphone : <a class="link-contact" href="tel:+33633429784">06.33.42.97.84</a></p>
+                    <p class="contact">Email : <a class="link-contact" href="mailto:nmerhand@la-joliverie.com">nmerhand@la-joliverie.com</a></p>
+                </div>
+                <div>
+                    <a href="https://www.linkedin.com/in/nora-merhand-a372432aa/" target="_blank"><img
+                            src="../Images/linkedin.svg" class="social-icon"></a>
+                </div>
+            </div>
+        </div>
+        <div class="up-container">
+            <a href="#" id="scrollToTopBtn">
+                <img src="../Images/flecheRetour.png" class="arrow-up">
+            </a>
+        </div>
+    </footer>
+
+</body>
+
+<script src="../JS/scrollSmooth.js"></script>
+<script src="../JS/Menu.js"></script>
+
+</html>

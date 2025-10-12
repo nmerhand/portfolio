@@ -1,0 +1,128 @@
+/* LIENS INTERIEURS */
+.inner-link-stage {
+    text-decoration: none;
+    color: #2E3A59; /* bleu nuit */
+    transition: color 0.3s ease;
+}
+
+.inner-link-stage:hover {
+    color: #C9B2B9; /* rose subtil au survol */
+}
+
+/* CONTAINER DE LIENS */
+.links-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* BOUTONS */
+.link-button {
+    font-family: 'Raleway', sans-serif;
+    background-color: rgba(201, 178, 185, 0.4); /* rose transparent subtile */
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+    color: #2E3A59;
+    font-weight: bold;
+}
+
+.link-button:hover {
+    background-color: rgba(201, 178, 185, 0.2); /* rose encore plus subtil au hover */
+    cursor: pointer;
+    transform: translateY(-1px);
+}
+
+/* IMAGE MODAL */
+.myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin: 10px;
+    margin-bottom: 30px;
+}
+
+.myImg:hover {
+    opacity: 0.8; /* plus subtil que 0.5 */
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.TimelineV {
+    max-width: 280px;
+}
+
+.Checkbox {
+    max-width: 400px;
+}
+
+.TreeGridDesktop {
+    max-width: 1000px;
+}
+
+.TreeGridMobile {
+    max-width: 300px;
+}
+
+.caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #5A5A5A; /* gris neutre, lisible */
+    padding: 10px 0;
+    height: 150px;
+}
+
+.modal-content, .caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #F5F6FA; /* blanc cassé pour contraster sur fond noir */
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: #C9B2B9; /* petit accent rosé au survol */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}

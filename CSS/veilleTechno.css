@@ -1,0 +1,23 @@
+/* ARTICLE CONTAINER */
+.article-container {
+    margin-top: 3%;
+    border: 2px solid rgba(201, 178, 185, 0.5); /* rosé subtil transparent */
+    border-radius: 6px;
+    box-shadow: 0px 2px 5px rgba(46, 58, 89, 0.2);
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.article-container:hover {
+    background-color: rgba(201, 178, 185, 0.1); /* voile rosé discret */
+    border-color: rgba(201, 178, 185, 0.7); /* accent rosé au hover */
+    box-shadow: 3px 3px 10px rgba(46, 58, 89, 0.3);
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+/* NOM DE L'ARTICLE */
+.name-article {
+    font-size: 1.2em;
+    color: #2E3A59; /* bleu nuit */
+    font-weight: bold;
+}
