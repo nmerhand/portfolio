@@ -1,3 +1,7 @@
+<?php
+include_once '../PHP/connexionBDD.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -61,34 +65,22 @@
             alternative viable aux applications mobiles natives ?
         </p>
         <div class="container">
-            <fieldset class="article-container" onclick="window.location.href='VeilleTechno/Veille1.html'">
-                <legend class="name-article">Accessibilité multiplateforme sans coût de développement natif - Janvier 2025</legend>
-                <p>
-                    Les Applications Web Progressives offrent une alternative unifiée face à la complexité du
-                    développement multi-plateformes natif.
-                </p>
-            </fieldset>
-            <fieldset class="article-container" onclick="window.location.href='VeilleTechno/Veille2.html'">
-                <legend class="name-article">Expérience utilisateur proche du natif - Mars 2025</legend>
-                <p>
-                    Leur évolution technique permet aujourd'hui aux PWA de rivaliser avec les applications
-                    natives en matière d'expérience utilisateur.
-                </p>
-            </fieldset>
-            <fieldset class="article-container" onclick="window.location.href='VeilleTechno/Veille3.html'">
-                <legend class="name-article">Déploiement flexible et indépendance vis-à-vis des stores - Mai 2025</legend>
-                <p>
-                    En s'affranchissant des stores, les PWA redéfinissent les modes de distribution et de
-                    mise à jour des applications mobiles.
-                </p>
-            </fieldset>
-            <fieldset class="article-container" onclick="window.location.href='VeilleTechno/Veille4.html'">
-                <legend class="name-article">Limites et inconvénients des PWA - Juin 2025</legend>
-                <p>
-                    Derrière cette promesse de simplicité, certaines limites ralentissent encore leur
-                    adoption à grande échelle.
-                </p>
-            </fieldset>
+            <?php 
+            $requete = "SELECT * FROM veilletechno";
+            $stmt = $connexion->prepare($requete);
+            $stmt->execute();
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($results as $row) {
+            ?>
+                <fieldset class="article-container" onclick="window.location.href='VeilleTechno/Veille1.html'">
+                    <legend class="name-article"><?php echo $row['titre_veille']; ?></legend>
+                    <p>
+                        <?php echo $row['description']; ?>
+                    </p>
+                </fieldset>
+            <?php
+            }
+            ?>
         </div>
     </div>
     <footer>
