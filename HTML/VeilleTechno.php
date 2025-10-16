@@ -1,3 +1,7 @@
+<?php
+include_once '../PHP/connexionBDD.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -33,62 +37,28 @@
 
     <h1>Veille Technologique</h1>
     <div class="main-container">
-        <h2>Rôle</h2>
-        <p>Anticiper les évolutions, rester compétitif, améliorer les pratiques et innover.</p>
-        <h2>Outils</h2>
-        <ul>
-            <li>Agrégateurs (Feedly)</li>
-            <li>Réseaux sociaux (Twitter, LinkedIn)</li>
-            <li>Alertes Google</li>
-            <li>Forums spécialisés</li>
-            <li>Plateformes technologiques (GitHub, Dev.to)</li>
-        </ul>
-        <h2>Intérêt</h2>
-        <p>
-            Garder un avantage concurrentiel, suivre les tendances, détecter les opportunités et éviter 
-            l'obsolescence.
-        </p>
-        <h2>Qu'est-ce que c'est ?</h2>
-        <p>
-            Une surveillance systématique des innovations, outils, méthodologies ou tendances dans un domaine 
-            technique ou technologique.
-        </p>
-        <h2>Combien de temps y consacrer ?</h2>
-        <p>1 à 3 heures par semaine</p>
-        <hr style="border: none; border-top: 2px solid #C9B2B9; margin: 3rem 0;">
-        <h2>Sujet</h2>
+        
         <p>En quoi les Applications Web Progressives (Progressive Web Apps ou PWA) représentent-elle une
             alternative viable aux applications mobiles natives ?
         </p>
         <div class="container">
-            <fieldset class="article-container" onclick="window.location.href='VeilleTechno/Veille1.html'">
-                <legend class="name-article">Accessibilité multiplateforme sans coût de développement natif - Janvier 2025</legend>
-                <p>
-                    Les Applications Web Progressives offrent une alternative unifiée face à la complexité du
-                    développement multi-plateformes natif.
-                </p>
-            </fieldset>
-            <fieldset class="article-container" onclick="window.location.href='VeilleTechno/Veille2.html'">
-                <legend class="name-article">Expérience utilisateur proche du natif - Mars 2025</legend>
-                <p>
-                    Leur évolution technique permet aujourd'hui aux PWA de rivaliser avec les applications
-                    natives en matière d'expérience utilisateur.
-                </p>
-            </fieldset>
-            <fieldset class="article-container" onclick="window.location.href='VeilleTechno/Veille3.html'">
-                <legend class="name-article">Déploiement flexible et indépendance vis-à-vis des stores - Mai 2025</legend>
-                <p>
-                    En s'affranchissant des stores, les PWA redéfinissent les modes de distribution et de
-                    mise à jour des applications mobiles.
-                </p>
-            </fieldset>
-            <fieldset class="article-container" onclick="window.location.href='VeilleTechno/Veille4.html'">
-                <legend class="name-article">Limites et inconvénients des PWA - Juin 2025</legend>
-                <p>
-                    Derrière cette promesse de simplicité, certaines limites ralentissent encore leur
-                    adoption à grande échelle.
-                </p>
-            </fieldset>
+            <?php 
+            $requete = "SELECT * FROM veilletechno";
+            $stmt = $connexion->prepare($requete);
+            $stmt->execute();
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($results as $row) {
+                $id = $row['id_veille'];
+            ?>
+                <fieldset class="article-container" onclick="window.location.href='Veille.php?id=<?php echo $id; ?>'">
+                    <legend class="name-article"><?php echo $row['Titre_veille']; ?></legend>
+                    <p>
+                        <?php echo $row['Description']; ?>
+                    </p>
+                </fieldset>
+            <?php
+            }
+            ?>
         </div>
     </div>
     <footer>
