@@ -9,6 +9,9 @@
 </head>
 
 <body>
+
+    <img src="../Images/icon_back.svg" class="icon-back" onclick="history.back()">
+
     <form method="POST" action="../PHP/LoginAction.php" autocomplete="on" novalidate>
         <label for="username">Nom d'utilisateur</label>
         <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur" required

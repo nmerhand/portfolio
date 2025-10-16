@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Raleway:wght@400;700&display=swap');
 
-/* ===== Base ===== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,7 +8,7 @@
 }
 
 body {
-    background-color: #F0F4FA; /* bleu clair tech */
+    background-color: #F0F4FA; 
     color: #2A2A2A;
     display: flex;
     justify-content: center;
@@ -18,7 +17,17 @@ body {
     padding: 20px;
 }
 
-/* ===== Formulaire ===== */
+.icon-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) saturate(100%) invert(90%) sepia(10%) saturate(400%) hue-rotate(320deg) brightness(92%) contrast(90%);
+    transition: transform 0.4s ease, filter 0.4s ease;
+    cursor: pointer;
+}
+
 form {
     background-color: #FFFFFF;
     padding: 35px 40px;
@@ -33,13 +42,12 @@ form {
 h1 {
     font-family: 'DM Sans', sans-serif;
     font-size: 2em;
-    color: #2E3A59; /* bleu foncé pro */
+    color: #2E3A59; 
     font-weight: 700;
     text-align: center;
     margin-bottom: 25px;
 }
 
-/* ===== Labels et Inputs ===== */
 label {
     font-weight: 600;
     margin-bottom: 5px;
@@ -49,14 +57,14 @@ label {
 input {
     padding: 12px 15px;
     margin-bottom: 20px;
-    border: 1.5px solid #B0C4DE; /* bleu clair */
+    border: 1.5px solid #B0C4DE; 
     border-radius: 8px;
     font-size: 1em;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus {
-    border-color: #EAA5AB; /* touche rosée discrète */
+    border-color: #EAA5AB; 
     box-shadow: 0 0 6px rgba(234, 165, 171, 0.3);
     outline: none;
 }
@@ -73,12 +81,11 @@ input::placeholder {
     text-align: center;
 }
 
-/* ===== Bouton ===== */
 button {
     padding: 12px 20px;
     border: none;
     border-radius: 8px;
-    background-color: #2E3A59; /* bleu foncé pro */
+    background-color: #2E3A59; 
     color: #FFFFFF;
     font-weight: 600;
     font-size: 1em;
@@ -87,7 +94,7 @@ button {
 }
 
 button:hover {
-    background-color: #3B4A70; /* bleu légèrement plus clair */
+    background-color: #3B4A70; 
     box-shadow: 0 5px 10px rgba(58, 72, 101, 0.4);
     transform: translateY(-2px);
 }
