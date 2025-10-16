@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Raleway:wght@400;700&display=swap');
 
+/* ===== BODY ===== */
 body {
     font-family: 'Raleway', sans-serif;
     background-color: #F5F6FA;
@@ -35,12 +36,21 @@ header h1 {
     display: flex;
     flex-direction: column;
     margin-bottom: 25px;
+    background-color: #FAFAFB;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #C9B2B9;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.section:hover {
+    border-color: #B58D9C;
+    box-shadow: 0 2px 8px rgba(197, 158, 173, 0.3);
 }
 
 .section label {
     font-weight: bold;
     margin-bottom: 8px;
-    margin-top: 15px;
     color: #2E3A59;
 }
 
@@ -52,9 +62,8 @@ header h1 {
     padding: 10px;
     border: 1px solid #C9B2B9;
     border-radius: 6px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     resize: vertical;
-    background-color: #FAFAFB;
+    margin-bottom: 10px;
 }
 
 .section input:focus,
@@ -62,6 +71,40 @@ header h1 {
     outline: none;
     border-color: #B58D9C;
     box-shadow: 0 0 5px rgba(197, 158, 173, 0.5);
+}
+
+/* ===== BOUTONS AJOUT/SUPPR ===== */
+.section button {
+    align-self: flex-start;
+    background-color: #B58D9C;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 5px;
+}
+
+.section button:hover {
+    background-color: #A47E8D;
+    transform: translateY(-2px);
+}
+
+button[type="button"]:not(.section button) {
+    background-color: #2E3A59;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="button"]:not(.section button):hover {
+    background-color: #3C476A;
+    transform: translateY(-2px);
 }
 
 /* ===== TITRES ===== */
@@ -74,7 +117,7 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* ===== BOUTONS ===== */
+/* ===== BOUTONS ENREGISTRER/ANNULER ===== */
 .container-buttons {
     display: flex;
     justify-content: center;
@@ -82,22 +125,15 @@ h2 {
     margin-top: 40px;
 }
 
-button,
-a.btn-cancel {
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-    font-size: 1em;
-    padding: 12px 25px;
-    border-radius: 6px;
-    border: none;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
 .btn-save {
     background-color: #2E3A59;
     color: #F5F6FA;
+    font-weight: bold;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-save:hover {
@@ -108,6 +144,12 @@ a.btn-cancel {
 .btn-cancel {
     background-color: #B58D9C;
     color: #fff;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 12px 25px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-cancel:hover {
@@ -115,51 +157,34 @@ a.btn-cancel {
     transform: translateY(-2px);
 }
 
-.delete-form {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 40px;
-    margin-bottom: 30px;
+/* ===== FOOTER ===== */
+footer {
+    background-color: #2E3A59;
+    color: #F5F6FA;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    border-top: 6px solid #1F2535;
 }
 
-.btn-delete {
-    background-color: #E57373;
-    color: #fff; 
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 600;
-    display: flex;
+.link-back {
+    text-decoration: none;
+    color: #F5F6FA;
+    font-weight: bold;
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.btn-delete:hover {
-    background-color: #EF5350;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(239, 83, 80, 0.4);
+.link-back:hover {
+    color: #C9B2B9;
 }
 
-.btn-delete:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 5px rgba(239, 83, 80, 0.3);
+.arrow-back {
+    width: 20px;
+    margin-right: 8px;
+    transform: rotate(180deg);
 }
-
-.icon-delete {
-    width: 18px;
-    height: 18px;
-    fill: #fff; 
-    transition: fill 0.3s ease;
-}
-
-.btn-delete:hover .icon-delete {
-    transform: rotate(10deg);
-}
-
-
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
@@ -176,6 +201,10 @@ a.btn-cancel {
         flex-direction: column;
         gap: 15px;
     }
+
+    .section button {
+        width: 100%;
+    }
 }
 
 @media (max-width: 600px) {
@@ -185,17 +214,5 @@ a.btn-cancel {
 
     h2 {
         font-size: 1.2em;
-    }
-
-    button,
-    a.btn-cancel {
-        width: 100%;
-        text-align: center;
-    }
-
-    .btn-delete {
-        width: 100%;
-        padding: 10px 0;
-        font-size: 0.95em;
     }
 }

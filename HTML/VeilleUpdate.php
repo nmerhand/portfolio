@@ -1,6 +1,16 @@
 <?php
 include_once '../PHP/connexionBDD.php';
 
+session_start();
+
+if (!isset($_SESSION['id_user'])) {
+    $_SESSION['return_to'] = $_SERVER['REQUEST_URI'];
+    header("Location: login.php");
+    exit;
+}
+?>
+
+<?php
 $id_veille = $_GET['id'];
 
 // --- Récupération des infos principales de la veille
@@ -30,7 +40,7 @@ $sources = $stmt3->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modifier : <?php echo htmlspecialchars($veille['Titre_veille']); ?></title>
+    <title>Modification de la veille</title>
     <link rel="stylesheet" href="../CSS/FontVeilleUpdate.css">
 </head>
 
@@ -88,5 +98,13 @@ $sources = $stmt3->fetchAll(PDO::FETCH_ASSOC);
             <button type="submit" class="btn-save">Enregistrer</button>
         </div>
     </form>
+
+    <form action="../PHP/DeleteVeilleAction.php" method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer cette veille ?');" class="delete-form">
+        <input type="hidden" name="id_veille" value="<?php echo $id_veille; ?>">
+        <button type="submit" class="btn-delete">
+            <img src="../Images/icon_sup.svg" class="icon-delete" alt="Supprimer la veille">
+        </button>
+    </form>
+
 </body>
 </html>

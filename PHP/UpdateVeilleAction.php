@@ -1,5 +1,5 @@
 <?php
-include_once '../PHP/connexionBDD.php';
+include_once 'connexionBDD.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_veille = $_POST['id_veille'];

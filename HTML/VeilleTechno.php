@@ -60,7 +60,23 @@ include_once '../PHP/connexionBDD.php';
             }
             ?>
         </div>
+        <div class="container-icon-add">
+            <a href="VeilleCreate.php" class="links-add-logout">
+                <img src="../Images/icon_add.svg" class="icon-add">
+            </a>
+            <?php
+            session_start();
+            if (isset($_SESSION['id_user'])) {
+            ?>
+            <a href="../PHP/LogoutAction.php" class="links-add-logout" onclick="return confirmLogout();">
+                <img src="../Images/icon_logout.svg" class="icon-logout">
+            </a>
+            <?php } ?>
+        </div>  
     </div>
+
+    
+
     <footer>
         <div class="table-footer">
             <div class="table-container" id="a-propos">
@@ -97,5 +113,13 @@ include_once '../PHP/connexionBDD.php';
 
 <script src="../JS/scrollSmooth.js"></script>
 <script src="../JS/Menu.js"></script>
+<script>
+
+function confirmLogout() {
+    // Affiche une boîte de dialogue de confirmation
+    return confirm("Voulez-vous vraiment vous déconnecter ?");
+}
+
+</script>
 
 </html>
