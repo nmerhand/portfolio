@@ -1,4 +1,3 @@
-/* ARTICLE CONTAINER */
 .article-container {
     margin-top: 3%;
     border: 2px solid rgba(201, 178, 185, 0.5); /* rosé subtil transparent */
@@ -15,7 +14,6 @@
     transform: translateY(-2px);
 }
 
-/* NOM DE L'ARTICLE */
 .name-article {
     font-size: 1.2em;
     color: #2E3A59; /* bleu nuit */

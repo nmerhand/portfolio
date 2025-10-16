@@ -49,11 +49,30 @@ h1 {
     color: #2A2A2A;
 }
 
-/* SÉPARATEUR */
 .séparation {
     border: none; 
     border-top: 2px solid #C9B2B9; /* rose poudré */
     margin: 1rem 3.5rem;
+}
+
+.container-icon-update {
+    text-align: right;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+.icon-update {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) saturate(100%) invert(90%) sepia(10%) saturate(400%) hue-rotate(320deg) brightness(92%) contrast(90%);
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.icon-update:hover {
+    filter: brightness(0) saturate(100%) invert(85%) sepia(15%) saturate(700%) hue-rotate(320deg) brightness(90%) contrast(85%);
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 /* SOURCES */

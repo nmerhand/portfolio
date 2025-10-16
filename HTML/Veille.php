@@ -73,6 +73,11 @@ foreach ($result2 as $row) {
                 <?php echo $row['Conclusion'] ?>
             </p>
         </div>
+        <div class="container-icon-update">
+            <a href="VeilleUpdate.php?id=<?php echo $id; ?>">
+                <img src="../Images/icon_update.svg" class="icon-update">
+            </a>
+        </div>
     </div>
 
     <div class="sources-container">
