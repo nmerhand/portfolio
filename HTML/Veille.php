@@ -104,11 +104,9 @@ foreach ($result2 as $row) {
     <footer>
         <div id="footer-container">
             <div class="back-container">
-                <div>
-                    <a href="VeilleTechno.php" class="link-back">
-                        <img src="../Images/flecheRetour.png" class="arrow-back">Retour
-                    </a>
-                </div>
+                <a href="VeilleTechno.php" class="link-back">
+                    <img src="../Images/icon_back.svg" class="icon-back">
+                </a>
             </div>
             <div class="icon-container">
                 <a href="https://www.linkedin.com/in/nora-merhand-a372432aa/" target="_blank">

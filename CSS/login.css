@@ -28,6 +28,12 @@ body {
     cursor: pointer;
 }
 
+.icon-back:hover {
+    transform: rotate(-10deg) scale(1.1);
+    filter: brightness(0) saturate(100%) invert(30%) sepia(15%) saturate(250%) hue-rotate(200deg) brightness(100%) contrast(95%);
+}
+
+
 form {
     background-color: #FFFFFF;
     padding: 35px 40px;

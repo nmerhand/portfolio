@@ -110,11 +110,8 @@ footer {
 }
 
 .back-container {
-    margin-left: 15px;
-    margin-top: 5px;
-    margin-bottom: 12px;
-    padding: 2px 8px;
-    border-radius: 4px;
+    margin-left: 10px;
+    margin-bottom: 30px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -129,9 +126,18 @@ footer {
     font-weight: bold;
 }
 
-.arrow-back {
-    width: 12px;
-    padding-right: 4px;
+.icon-back {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) saturate(100%) invert(90%) sepia(10%) saturate(400%) hue-rotate(320deg) brightness(92%) contrast(90%);
+    transition: transform 0.4s ease, filter 0.4s ease;
+    cursor: pointer;
+}
+
+.icon-back:hover {
+    transform: rotate(-10deg) scale(1.1);
+    filter: brightness(0) saturate(100%) invert(30%) sepia(15%) saturate(250%) hue-rotate(200deg) brightness(100%) contrast(95%);
 }
 
 .social-icon {
