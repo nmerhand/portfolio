@@ -44,8 +44,10 @@ if (!isset($_SESSION['id_user'])) {
                 <input type="text" name="sections[0][Titre_section]">
                 <label>Contenu :</label>
                 <textarea name="sections[0][Content_section]" rows="4"></textarea>
-                <button type="button" onclick="removeSection(this)">Supprimer cette section</button>
-            </div>
+                <button type="button" onclick="removeSection(this)">
+                    <img src="../Images/icon_sup.svg" alt="Supprimer la veille" class="icon-delete">
+                </button>
+            </div>  
         </div>
         <button type="button" onclick="addSection()">Ajouter une section</button>
 
@@ -61,7 +63,9 @@ if (!isset($_SESSION['id_user'])) {
                 <input type="text" name="sources[0][titre_source]">
                 <label>URL :</label>
                 <input type="url" name="sources[0][url_source]">
-                <button type="button" onclick="removeSource(this)">Supprimer cette source</button>
+                <button type="button" onclick="removeSource(this)">
+                    <img src="../Images/icon_sup.svg" alt="Supprimer la veille" class="icon-delete">
+                </button>
             </div>
         </div>
         <button type="button" onclick="addSource()">Ajouter une source</button>
@@ -96,7 +100,9 @@ if (!isset($_SESSION['id_user'])) {
                 <input type="text" name="">
                 <label>Contenu :</label>
                 <textarea rows="4" name=""></textarea>
-                <button type="button" onclick="removeSection(this)">Supprimer cette section</button>
+                <button type="button" onclick="removeSection(this)">
+                    <img src="../Images/icon_sup.svg" alt="Supprimer la veille" class="icon-delete">
+                </button>
             `;
             container.appendChild(div);
             updateSectionIndexes();
@@ -127,7 +133,9 @@ if (!isset($_SESSION['id_user'])) {
                 <input type="text" name="">
                 <label>URL :</label>
                 <input type="url" name="">
-                <button type="button" onclick="removeSource(this)">Supprimer cette source</button>
+                <button type="button" onclick="removeSource(this)">
+                    <img src="../Images/icon_sup.svg" alt="Supprimer la veille" class="icon-delete">
+                </button>
             `;
             container.appendChild(div);
             updateSourceIndexes();

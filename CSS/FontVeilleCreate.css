@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Raleway:wght@400;700&display=swap');
 
-/* ===== BODY ===== */
 body {
     font-family: 'Raleway', sans-serif;
     background-color: #F5F6FA;
@@ -22,7 +21,6 @@ header h1 {
     margin: 0;
 }
 
-/* ===== FORMULAIRE ===== */
 .main-container {
     max-width: 900px;
     margin: 40px auto;
@@ -73,7 +71,6 @@ header h1 {
     box-shadow: 0 0 5px rgba(197, 158, 173, 0.5);
 }
 
-/* ===== BOUTONS AJOUT/SUPPR ===== */
 .section button {
     align-self: flex-start;
     background-color: #B58D9C;
@@ -89,6 +86,16 @@ header h1 {
 .section button:hover {
     background-color: #A47E8D;
     transform: translateY(-2px);
+}
+
+.section button img {
+    width: 16px;
+    height: 16px;
+    transition: fill 0.3s ease;
+}
+
+.section button:hover img {
+    transform: rotate(-10deg);
 }
 
 button[type="button"]:not(.section button) {
@@ -107,7 +114,6 @@ button[type="button"]:not(.section button):hover {
     transform: translateY(-2px);
 }
 
-/* ===== TITRES ===== */
 h2 {
     font-family: 'DM Sans', sans-serif;
     color: #B58D9C;
@@ -157,7 +163,6 @@ h2 {
     transform: translateY(-2px);
 }
 
-/* ===== FOOTER ===== */
 footer {
     background-color: #2E3A59;
     color: #F5F6FA;
@@ -178,12 +183,6 @@ footer {
 
 .link-back:hover {
     color: #C9B2B9;
-}
-
-.arrow-back {
-    width: 20px;
-    margin-right: 8px;
-    transform: rotate(180deg);
 }
 
 /* ===== RESPONSIVE ===== */
@@ -214,5 +213,9 @@ footer {
 
     h2 {
         font-size: 1.2em;
+    }
+
+    .btn-cancel {
+        text-align: center;
     }
 }

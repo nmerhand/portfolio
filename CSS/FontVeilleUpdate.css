@@ -21,7 +21,6 @@ header h1 {
     margin: 0;
 }
 
-/* ===== FORMULAIRE ===== */
 .main-container {
     max-width: 900px;
     margin: 40px auto;
@@ -64,7 +63,50 @@ header h1 {
     box-shadow: 0 0 5px rgba(197, 158, 173, 0.5);
 }
 
-/* ===== TITRES ===== */
+.section button {
+    align-self: flex-start;
+    background-color: #B58D9C;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 13px;
+    font-size: 0.9em;
+}
+
+.section button:hover {
+    background-color: #A47E8D;
+    transform: translateY(-2px);
+}
+
+.section button img {
+    width: 16px;
+    height: 16px;
+    transition: fill 0.3s ease;
+}
+
+.section button:hover img {
+    transform: rotate(-10deg);
+}
+
+button[type="button"]:not(.section button) {
+    background-color: #2E3A59;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="button"]:not(.section button):hover {
+    background-color: #3C476A;
+    transform: translateY(-2px);
+}
+
 h2 {
     font-family: 'DM Sans', sans-serif;
     color: #B58D9C;
@@ -159,8 +201,6 @@ a.btn-cancel {
     transform: rotate(10deg);
 }
 
-
-
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
     .main-container {
@@ -187,15 +227,16 @@ a.btn-cancel {
         font-size: 1.2em;
     }
 
-    button,
-    a.btn-cancel {
+    .btn-save {
         width: 100%;
         text-align: center;
     }
 
+    .btn-cancel {
+        text-align: center;
+    }
+
     .btn-delete {
-        width: 100%;
-        padding: 10px 0;
-        font-size: 0.95em;
+        padding: 10px 15px;
     }
 }
