@@ -32,8 +32,8 @@
 }
 
 .icon-add {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     filter: brightness(0) saturate(100%) invert(90%) sepia(10%) saturate(400%) hue-rotate(320deg) brightness(92%) contrast(90%);
     transition: transform 0.4s ease, filter 0.4s ease;
 }
@@ -45,11 +45,12 @@
 }
 
 .icon-logout {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     filter: brightness(0) saturate(100%) invert(90%) sepia(10%) saturate(400%) hue-rotate(320deg) brightness(92%) contrast(90%);
     transition: transform 0.4s ease, filter 0.4s ease;
     margin-left: 10px;
+    margin-bottom: 2px;
 }
 
 .icon-logout:hover {

@@ -43,7 +43,7 @@ include_once '../PHP/connexionBDD.php';
         </p>
         <div class="container">
             <?php 
-            $requete = "SELECT * FROM veilletechno";
+            $requete = "SELECT * FROM veilletechno ORDER BY id_veille DESC";
             $stmt = $connexion->prepare($requete);
             $stmt->execute();
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -51,7 +51,7 @@ include_once '../PHP/connexionBDD.php';
                 $id = $row['id_veille'];
             ?>
                 <fieldset class="article-container" onclick="window.location.href='Veille.php?id=<?php echo $id; ?>'">
-                    <legend class="name-article"><?php echo $row['Titre_veille']; ?></legend>
+                    <legend class="name-article"><?php echo $row['Titre_veille']; ?> - <?php echo date("d/m/Y", strtotime($row['Date_creation'])); ?></legend>
                     <p>
                         <?php echo $row['Description']; ?>
                     </p>
