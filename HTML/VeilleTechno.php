@@ -17,7 +17,7 @@ include_once '../PHP/connexionBDD.php';
     <header>
         <nav>
             <a class="no-active" href="../index.html">Accueil</a>
-            <a class="no-active" href="Projets.html">Projets</a>
+            <a class="no-active" href="Projets.php">Projets</a>
             <a class="active">Veille Technologique</a>
             <a class="no-active" href="Stages.html">Stages</a>
         </nav>
@@ -28,7 +28,7 @@ include_once '../PHP/connexionBDD.php';
         <nav id="menu-nav">
             <ul class="menu-list">
                 <a class="no-active" href="../index.html">Accueil</a>
-                <a class="no-active" href="Projets.html">Projets</a>
+                <a class="no-active" href="Projets.php">Projets</a>
                 <a class="active">Veille Technologique</a>
                 <a class="no-active" href="Stages.html">Stages</a>
             </ul>
@@ -86,7 +86,7 @@ include_once '../PHP/connexionBDD.php';
             <div class="table-container" id="navigation">
                 <h2>Navigation</h2>
                 <div class="div-link"><a class="link-navigation" href="../index.html">Accueil</a></div>
-                <div class="div-link"><a class="link-navigation" href="Projets.html">Projets</a></div>
+                <div class="div-link"><a class="link-navigation" href="Projets.php">Projets</a></div>
                 <div class="div-link"><a class="link-navigation" href="#">Veille Technologique</a></div>
                 <div class="div-link"><a class="link-navigation" href="Stages.html">Stages</a></div>
             </div>
