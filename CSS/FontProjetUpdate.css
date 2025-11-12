@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Raleway:wght@400;700&display=swap');
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #F5F6FA;
+    color: #2A2A2A;
+    text-align: justify;
+}
+
+header {
+    background-color: #2E3A59;
+    color: #F5F6FA;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 6px;
+}
+
+header h1 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2.2em;
+    margin: 0;
+}
+
+.main-container {
+    max-width: 950px;
+    margin: 50px auto;
+    background-color: #FFFFFF;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(46, 58, 89, 0.15);
+}
+
+.bloc {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.bloc h2 {
+    font-family: 'DM Sans', sans-serif;
+    color: #B58D9C;
+    border-left: 5px solid #C9B2B9;
+    padding-left: 12px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 600;
+    color: #2E3A59;
+    margin-bottom: 6px;
+    margin-top: 14px;
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+    padding: 10px 12px;
+    border: 1px solid #C9B2B9;
+    border-radius: 6px;
+    background-color: #FAFAFB;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #B58D9C;
+    box-shadow: 0 0 5px rgba(197, 158, 173, 0.5);
+}
+
+#objectifs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.objectif-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.objectif-item input {
+    flex: 1;
+}
+
+.btn-remove {
+    align-self: flex-start;
+    background-color: #B58D9C;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+
+.btn-remove:hover {
+    background-color: #A47E8D;
+    transform: translateY(-2px);
+}
+
+button img {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+button:hover img {
+    transform: rotate(10deg);
+}
+
+#sup-lien:hover img {
+    transform: rotate(-10deg);
+}
+
+button[type="button"] {
+    align-self: flex-start;
+    background-color: #2E3A59;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+button[type="button"]:hover {
+    background-color: #3C476A;
+    transform: translateY(-2px);
+}
+
+.tech-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.tech-group label {
+    background-color: #FAFAFB;
+    border: 1px solid #C9B2B9;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tech-group label:hover {
+    background-color: #F0E8EB;
+}
+
+input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+.tech-new {
+    height: 13px;
+}
+
+#liens-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.lien-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 6px;
+    border: 1px solid #C9B2B9;
+    padding: 20px;
+    padding-right: 50px;
+    background-color: #FAFAFB;
+}
+
+.lien-item input {
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.button {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 12px 25px;
+    border-radius: 6px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button.save {
+    background-color: #2E3A59;
+    color: #F5F6FA;
+}
+
+.button.save:hover {
+    background-color: #3C476A;
+    transform: translateY(-2px);
+}
+
+.button.cancel {
+    background-color: #B58D9C;
+    color: #fff;
+}
+
+.button.cancel:hover {
+    background-color: #A47E8D;
+    transform: translateY(-2px);
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center; align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 900px) {
+    .main-container {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .lien-item {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+}
