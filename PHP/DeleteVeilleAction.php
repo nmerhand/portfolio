@@ -7,10 +7,10 @@ if (isset($_POST['id_veille'])) {
     try {
         $connexion->beginTransaction();
 
-        $connexion->prepare("DELETE FROM Source WHERE id_veille = :id")->execute([':id' => $id_veille]);
-        $connexion->prepare("DELETE FROM Section WHERE id_veille = :id")->execute([':id' => $id_veille]);
+        $connexion->prepare("DELETE FROM source WHERE id_veille = :id")->execute([':id' => $id_veille]);
+        $connexion->prepare("DELETE FROM section WHERE id_veille = :id")->execute([':id' => $id_veille]);
 
-        $connexion->prepare("DELETE FROM VeilleTechno WHERE id_veille = :id")->execute([':id' => $id_veille]);
+        $connexion->prepare("DELETE FROM veilletechno WHERE id_veille = :id")->execute([':id' => $id_veille]);
 
         $connexion->commit();
 

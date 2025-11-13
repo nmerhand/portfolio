@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $connexion->beginTransaction();
 
-        $sql_veille = "INSERT INTO VeilleTechno (Titre_veille, Description, Date_creation, Date_modif, Intro, Conclusion)
+        $sql_veille = "INSERT INTO veilletechno (Titre_veille, Description, Date_creation, Date_modif, Intro, Conclusion)
                         VALUES (:titre, :description, :date_creation, :date_modif, :intro, :conclusion)";
         $stmt = $connexion->prepare($sql_veille);
         $stmt->bindParam(':titre', $titre);
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $content_section = $section['Content_section'] ?? '';
                     $numero_section = $index + 1;
 
-                    $sql_section = "INSERT INTO Section (Titre_section, Content_section, numero_section, id_veille)
+                    $sql_section = "INSERT INTO section (Titre_section, Content_section, numero_section, id_veille)
                                     VALUES (:titre_section, :content_section, :numero_section, :id_veille)";
                     $stmt_section = $connexion->prepare($sql_section);
                     $stmt_section->bindParam(':titre_section', $titre_section);
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $url_source = $source['url_source'] ?? '';
                     $titre_source = $source['titre_source'] ?? '';
 
-                    $sql_source = "INSERT INTO Source (url_source, id_veille, titre_source)
+                    $sql_source = "INSERT INTO source (url_source, id_veille, titre_source)
                                    VALUES (:url_source, :id_veille, :titre_source)";
                     $stmt_source = $connexion->prepare($sql_source);
                     $stmt_source->bindParam(':url_source', $url_source);

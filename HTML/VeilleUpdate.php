@@ -4,7 +4,7 @@ session_start();
 
 if (!isset($_SESSION['id_user'])) {
     $_SESSION['return_to'] = $_SERVER['REQUEST_URI'];
-    header("Location: login.php");
+    header("Location: Login.php");
     exit;
 }
 
