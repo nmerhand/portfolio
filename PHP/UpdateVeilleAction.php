@@ -9,6 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conclusion = $_POST['Conclusion'];
 
     try {
+        // Active le mode exception (au cas où ce n’est pas fait dans connexionBDD.php)
+        $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $connexion->beginTransaction();
 
         // --- Mise à jour de la veille principale
@@ -28,44 +30,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':id' => $id_veille
         ]);
 
-        // --- Sections
+        // --- Gestion des SECTIONS
         $existingIds = [];
-        if (isset($_POST['sections'])) {
-            foreach ($_POST['sections'] as $section) {
+
+        if (isset($_POST['sections']) && is_array($_POST['sections'])) {
+            foreach ($_POST['sections'] as $index => $section) {
                 $id_section = $section['id_section'] ?? null;
                 $titre_section = $section['Titre_section'] ?? '';
                 $contenu_section = $section['Content_section'] ?? '';
+                $numero_section = $index + 1; // ordre dans le tableau
 
                 if ($id_section) {
-                    // Update
+                    // Mise à jour d'une section existante
                     $stmt = $connexion->prepare("
                         UPDATE section 
-                        SET Titre_section = :titre, Content_section = :contenu 
-                        WHERE id_section = :id_section AND id_veille = :id_veille
+                        SET Titre_section = :titre, 
+                            Content_section = :contenu,
+                            numero_section = :numero
+                        WHERE id_section = :id_section 
+                        AND id_veille = :id_veille
                     ");
                     $stmt->execute([
                         ':titre' => $titre_section,
                         ':contenu' => $contenu_section,
+                        ':numero' => $numero_section,
                         ':id_section' => $id_section,
                         ':id_veille' => $id_veille
                     ]);
                     $existingIds[] = $id_section;
                 } else {
-                    // Insert
+                    // Insertion d'une nouvelle section
                     $stmt = $connexion->prepare("
-                        INSERT INTO section (Titre_section, Content_section, id_veille)
-                        VALUES (:titre, :contenu, :id_veille)
+                        INSERT INTO section (Titre_section, Content_section, numero_section, id_veille)
+                        VALUES (:titre, :contenu, :numero, :id_veille)
                     ");
                     $stmt->execute([
                         ':titre' => $titre_section,
                         ':contenu' => $contenu_section,
+                        ':numero' => $numero_section,
                         ':id_veille' => $id_veille
                     ]);
+                    $existingIds[] = $connexion->lastInsertId();
                 }
             }
         }
 
-        // Supprimer les sections non présentes
+        // Suppression des sections non présentes
         $stmt = $connexion->prepare("
             DELETE FROM section 
             WHERE id_veille = :id_veille 
@@ -73,20 +83,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ");
         $stmt->execute([':id_veille' => $id_veille]);
 
-        // --- Sources
+        // Renumérotation propre des sections (en cas de trous)
+        $connexion->exec("SET @rownum := 0;");
+        $stmt = $connexion->prepare("
+            UPDATE section 
+            SET numero_section = (@rownum := @rownum + 1)
+            WHERE id_veille = :id_veille
+            ORDER BY numero_section
+        ");
+        $stmt->execute([':id_veille' => $id_veille]);
+
+        // --- Gestion des SOURCES
         $existingIds = [];
-        if (isset($_POST['sources'])) {
+
+        if (isset($_POST['sources']) && is_array($_POST['sources'])) {
             foreach ($_POST['sources'] as $source) {
                 $id_source = $source['id_source'] ?? null;
                 $titre_source = $source['titre_source'] ?? '';
                 $url_source = $source['url_source'] ?? '';
 
                 if ($id_source) {
-                    // Update
+                    // Mise à jour
                     $stmt = $connexion->prepare("
                         UPDATE source 
                         SET titre_source = :titre, url_source = :url 
-                        WHERE id_source = :id_source AND id_veille = :id_veille
+                        WHERE id_source = :id_source 
+                        AND id_veille = :id_veille
                     ");
                     $stmt->execute([
                         ':titre' => $titre_source,
@@ -96,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     ]);
                     $existingIds[] = $id_source;
                 } else {
-                    // Insert
+                    // Insertion
                     $stmt = $connexion->prepare("
                         INSERT INTO source (titre_source, url_source, id_veille)
                         VALUES (:titre, :url, :id_veille)
@@ -106,11 +128,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         ':url' => $url_source,
                         ':id_veille' => $id_veille
                     ]);
+                    $existingIds[] = $connexion->lastInsertId();
                 }
             }
         }
 
-        // Supprimer les sources non présentes
+        // Suppression des sources non présentes
         $stmt = $connexion->prepare("
             DELETE FROM source 
             WHERE id_veille = :id_veille 
@@ -118,9 +141,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ");
         $stmt->execute([':id_veille' => $id_veille]);
 
+        // Tout s’est bien passé : on valide
         $connexion->commit();
+
         header("Location: ../HTML/Veille.php?id=" . $id_veille);
         exit;
+        
     } catch (Exception $e) {
         $connexion->rollBack();
         echo "Erreur : " . htmlspecialchars($e->getMessage());
