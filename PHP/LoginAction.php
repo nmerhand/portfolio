@@ -29,11 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     } else {
         $_SESSION['error'] = "Nom d'utilisateur ou mot de passe incorrect";
-        header("Location: ../HTML/login.php");
+        header("Location: ../HTML/Login.php");
         exit;
     }
 
 } else {
-    header("Location: login.php");
+    header("Location: Login.php");
     exit;
 }
