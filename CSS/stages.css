@@ -1,3 +1,16 @@
+section {
+    background-color: rgba(201, 178, 185, 0.1); /* rosé subtil */
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(46, 58, 89, 0.2);
+}
+
 .inner-link-stage {
     text-decoration: none;
     color: #2E3A59; 
